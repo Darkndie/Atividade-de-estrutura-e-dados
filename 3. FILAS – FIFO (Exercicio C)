@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 5
+#define MAX_NOME 50
+
+int main() {
+    char preferencial[TAM][MAX_NOME];
+    char normal[TAM][MAX_NOME];
+    int idade, i, p = 0, n = 0;
+
+    for(i = 0; i < TAM; i++) {
+        char nome[MAX_NOME];
+        printf("Digite o nome da %dª pessoa: ", i + 1);
+        scanf("%s", nome);
+        printf("Idade: ");
+        scanf("%d", &idade);
+
+        if(idade >= 60)
+            strcpy(preferencial[p++], nome);
+        else
+            strcpy(normal[n++], nome);
+    }
+
+    printf("\nAtendimento:\n");
+    for(i = 0; i < p; i++)
+        printf("Atendendo preferencial: %s\n", preferencial[i]);
+    for(i = 0; i < n; i++)
+        printf("Atendendo: %s\n", normal[i]);
+
+    return 0;
+}
