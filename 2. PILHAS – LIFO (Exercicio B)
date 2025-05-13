@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+
+int main() {
+    char expressao[MAX], pilha[MAX];
+    int topo = -1, i;
+    int balanceado = 1;
+
+    printf("Digite a expressão: ");
+    scanf("%s", expressao);
+
+    for(i = 0; expressao[i] != '\0'; i++) {
+        if(expressao[i] == '(') {
+            pilha[++topo] = '(';
+        } else if(expressao[i] == ')') {
+            if(topo >= 0)
+                topo--;
+            else {
+                balanceado = 0;
+                break;
+            }
+        }
+    }
+
+    if(balanceado && topo == -1)
+        printf("Parênteses balanceados.\n");
+    else
+        printf("Parênteses incorretos.\n");
+
+    return 0;
+}
