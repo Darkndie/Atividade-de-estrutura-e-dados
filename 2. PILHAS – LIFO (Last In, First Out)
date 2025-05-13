@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 5
+#define TAM_URL 100
+
+int main() {
+    char pilha[TAM][TAM_URL];
+    int topo = -1;
+
+    for(int i = 0; i < TAM; i++) {
+        printf("Digite a URL da %dª página: ", i + 1);
+        scanf(" %s", pilha[++topo]);
+    }
+
+    printf("\nVoltando às páginas:\n");
+    while(topo >= 0) {
+        printf("Voltando para: %s\n", pilha[topo--]);
+    }
+
+    return 0;
+}
