@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    char senhas[5][10] = {"S1", "S2", "S3", "S4", "S5"};
+
+    for(int i = 0; i < 5; i++) {
+        printf("Atendendo senha %s\n", senhas[i]);
+    }
+
+    return 0;
+}
