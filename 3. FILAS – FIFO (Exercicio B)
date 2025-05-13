@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 4
+#define MAX_DOC 50
+
+int main() {
+    char fila[TAM][MAX_DOC];
+    int inicio = 0;
+
+    for(int i = 0; i < TAM; i++) {
+        printf("Digite o nome do %dº documento: ", i + 1);
+        scanf("%s", fila[i]);
+    }
+
+    for(int i = 0; i < TAM; i++) {
+        printf("Imprimindo: %s\n", fila[inicio]);
+        printf("Digite novo documento: ");
+        scanf("%s", fila[inicio]);
+        inicio = (inicio + 1) % TAM;
+    }
+
+    return 0;
+}
