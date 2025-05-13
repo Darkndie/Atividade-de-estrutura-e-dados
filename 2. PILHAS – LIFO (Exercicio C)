@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char palavra[100], pilha[100];
+    int topo = -1;
+
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    for(int i = 0; palavra[i] != '\0'; i++) {
+        pilha[++topo] = palavra[i];
+    }
+
+    printf("Palavra invertida: ");
+    while(topo >= 0) {
+        printf("%c", pilha[topo--]);
+    }
+    printf("\n");
+
+    return 0;
+}
